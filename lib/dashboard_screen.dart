@@ -2,6 +2,7 @@ import 'package:call_tracking/call_log_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:intl/intl.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -43,6 +44,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: const Text("Test Call"),
                     onPressed: () async {
                       FlutterPhoneDirectCaller.callNumber(_numberCtrl.text);
+                      print(DateFormat('dd MM yyyy - hh:mm:ss')
+                          .format(DateTime.now()));
                     },
                   ),
                 ),
